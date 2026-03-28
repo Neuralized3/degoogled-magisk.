@@ -1,0 +1,2 @@
+# degoogled-magisk.
+wait
