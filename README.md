@@ -46,7 +46,7 @@ A visual overview of the de-googled environment, featuring system-wide theming a
 
 * **Firmware:** [LineageOS](https://wiki.lineageos.org/devices/) (Locate device-specific builds via official wiki or [XDA Forums](https://xdaforums.com/)). If fallback Google Services are required, flash [MindTheGapps](https://gitlab.com/MindTheGapps).
 * **Custom rom + Rooting guide:** [Click here](https://github.com/Neuralized3/degoogled-magisk./blob/main/root.md)
-* **Service Emulation:** microG Services & Companion. Deployed via split configuration: [Root Base](https://github.com/microg/GmsCore/wiki/Downloads) and [ReVanced Base](https://github.com/TeamVanced/VancedMicroG/releases/tag/v0.2.24.220220-220220001).
+* **Service Emulation:** microG Services & Companion. Deployed via split configuration: [Root Base](https://github.com/microg/GmsCore/wiki/Downloads) and [ReVanced Base](https://github.com/TeamVanced/VancedMicroG/releases/tag/v0.2.24.220220-220220001). (If you installed MindtheGapps, skip microG entirely, you can directly download apps, however banking apps still might not work.)
 * **Package Manager:** [Aurora Store](https://www.apkmirror.com/apk/aurora-oss/aurora-store-fdroid-version/) (Primary privacy-respecting client).
 
 ---
