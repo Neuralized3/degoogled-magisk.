@@ -1,6 +1,6 @@
 # De-Googled Root Android Architecture
 
-A comprehensive deployment guide for a privacy-centric, de-googled, and rooted Android environment. This setup balances the removal of native telemetry with the retention of modern functionality through open-source frameworks and system-level modifications.
+A comprehensive deployment guide for a privacy-centric, de-googled, and rooted Android environment. This setup balances the removal of native telemetry with the retention of modern functionality through open-source frameworks and system-level modifications. [Click on this to visit the OS installation process.](https://github.com/Neuralized3/degoogled-magisk./blob/main/root.md) 
 
 > **Deployment Legend**
 > * **[AURS]**: Install via [Aurora Store](https://www.apkmirror.com/apk/aurora-oss/aurora-store-fdroid-version/)
@@ -45,7 +45,7 @@ A visual overview of the de-googled environment, featuring system-wide theming a
 ## Base OS & Framework
 
 * **Firmware:** [LineageOS](https://wiki.lineageos.org/devices/) (Locate device-specific builds via official wiki or [XDA Forums](https://xdaforums.com/)). If fallback Google Services are required, flash [MindTheGapps](https://gitlab.com/MindTheGapps).
-Custom rom + Rooting guide: [Click here](https://github.com/Neuralized3/degoogled-magisk./blob/main/root.md)
+* **Custom rom + Rooting guide:** [Click here](https://github.com/Neuralized3/degoogled-magisk./blob/main/root.md)
 * **Service Emulation:** microG Services & Companion. Deployed via split configuration: [Root Base](https://github.com/microg/GmsCore/wiki/Downloads) and [ReVanced Base](https://github.com/TeamVanced/VancedMicroG/releases/tag/v0.2.24.220220-220220001).
 * **Package Manager:** [Aurora Store](https://www.apkmirror.com/apk/aurora-oss/aurora-store-fdroid-version/) (Primary privacy-respecting client).
 
