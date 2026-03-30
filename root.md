@@ -76,20 +76,30 @@ The bootloader is the security gatekeeper of your phone. You must unlock it to i
 
 Android Verified Boot (AVB) checks if your operating system is official. We must disable this check, or the phone will refuse to boot your custom ROM.
 
-1. Reboot your phone back to the bootloader:
+#### 1. Reboot your phone back to the bootloader:
    ```bash
    adb reboot bootloader
    ```
-2. Disable the AVB security checks by flashing the `vbmeta.img` file with special flags:
-   ```bash
-   fastboot flash vbmeta vbmeta.img --disable-verity --disable-verification
-   ```
-3. Flash your custom recovery environment (like TWRP or Lineage Recovery).
-    *(For devices with a dedicated recovery partition):*
-     ```bash
-     fastboot flash recovery recovery.img
-     ```
-5. **CRITICAL STEP:** Do not let the phone boot up normally yet! Use the volume buttons to select **"Recovery Mode"** on the bootloader screen and press the Power button. If the phone boots normally, it will delete your custom recovery, and you will have to repeat this phase.
+
+#### 2. Disable Android Verified Boot (AVB)
+Modern devices use a Root of Trust that prevents booting modified partitions. To bypass this, you must flash the `vbmeta` image with flags that instruct the bootloader to ignore verification errors.
+```bash
+fastboot flash vbmeta vbmeta.img --disable-verity --disable-verification
+```
+
+#### 3. Recovery Environment Integration
+The method for loading a custom recovery (TWRP, OrangeFox, or Lineage) depends on your device's partition architecture:
+
+* **Scenario A: Devices with a Dedicated Recovery Partition**
+    Use this if your device has a standalone `/recovery` partition.
+    ```bash
+    fastboot flash recovery recovery.img
+    ```
+* **Scenario B: A/B Partition Devices (No Dedicated Recovery)**
+    On newer devices, the recovery resides within the `boot.img`. You must temporarily "live-boot" the recovery to install it permanently later.
+    ```bash
+    fastboot boot recovery.img
+    ```
 
 ---
 
