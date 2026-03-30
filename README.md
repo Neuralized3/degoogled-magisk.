@@ -6,9 +6,9 @@ A comprehensive guide and list of applications, modules, and modifications for a
 
 ## 1. Base OS & Framework
 
-* **ROM:** [LineageOS (De-googled)](#)
-* **Google Services Alternative:** [microG Services & microG Companion](#) *(Split setup for microG base services: one for root, one for ReVanced)*
-* **App Store:** [Aurora Store](#) *(best UI and works nice)*
+* **ROM:** LineageOS (De-googled) [from the official website](https://wiki.lineageos.org/devices/) or [XDA forum (Search your phone's model and go into the forum's development tab](https://xdaforums.com/) 
+* **Google Services Alternative:** microG Services & microG Companion *(Split setup for microG base services: [one for root](https://github.com/microg/GmsCore/wiki/Downloads), one for [ReVanced](https://github.com/TeamVanced/VancedMicroG/releases/tag/v0.2.24.220220-220220001))*
+* **App Store:** [Aurora Store](https://www.apkmirror.com/apk/aurora-oss/aurora-store-fdroid-version/) *(best UI and works nice)*
 
 ## 2. System Modifications (Root)
 
