@@ -122,7 +122,7 @@ Modern Android devices group multiple system parts into a single "dynamic partit
 
 ## Phase 5: Rooting with Magisk (Using a more modern alternative like KernelSU or APatch is way better but I suggest sticking with magisk as it is more supported.)
 <details>
-<summary><b>##Option A: Recovery Flashing Method (Legacy - Click to expand)
+<summary><b>## Option A: Recovery Flashing Method (Legacy - Click to expand)
 The following method is the legacy method for patching magisk into the system. Not used anymore. 
 </b></summary>
 <br>
@@ -159,9 +159,10 @@ When the phone restarts, your device is securely rooted!
 
 </details>
 
-
-
-## Option B (Modern Boot Patching Method)
+<details>
+<summary><b>## Option B: Modern Boot Patching Method (Click to expand)</b></summary>
+<br>
+The following method is the legacy method for patching magisk into the system. Not used anymore for modern devices...
 
 Instead of flashing through recovery, this method involves patching the actual kernel of your Operating System. This is the most compatible method for modern devices using **Virtual A/B partitions** and **Android 13+**.
 
@@ -212,6 +213,10 @@ This is the moment the root is applied to the system hardware.
 * **Verify:** Open the Magisk app. If prompted to perform **"Additional Setup,"** tap **OK** and let the phone reboot one last time.
 
 > **Success:** Your device now has a systemless root. You are ready to move to **Phase 6** to hide these modifications from sensitive apps.
+
+
+</details>
+
 
 ---
 ## Phase 6: Post-Install Hardening & Stealth Operations
