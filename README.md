@@ -6,24 +6,23 @@ A comprehensive guide and list of applications, modules, and modifications for a
 
 ## 1. Base OS & Framework
 
-* **ROM:** LineageOS (De-googled) [from the official website](https://wiki.lineageos.org/devices/) or [XDA forum (Search your phone's model and go into the forum's development tab](https://xdaforums.com/) 
+* **ROM:** LineageOS De-googled/Google Services by flashing [MindtheGapps](https://gitlab.com/MindTheGapps) (Download LineageOS either [from the official website](https://wiki.lineageos.org/devices/) or [XDA forum (Search your phone's model and go into the forum's development tab](https://xdaforums.com/)) 
 * **Google Services Alternative:** microG Services & microG Companion *(Split setup for microG base services: [one for root](https://github.com/microg/GmsCore/wiki/Downloads), one for [ReVanced](https://github.com/TeamVanced/VancedMicroG/releases/tag/v0.2.24.220220-220220001))*
 * **App Store:** [Aurora Store](https://www.apkmirror.com/apk/aurora-oss/aurora-store-fdroid-version/) *(best UI and works nice)*
 
 ## 2. System Modifications (Root)
 
 ### Magisk Modules
-* **De-bloater** *(v1.0 by sunilpaulmathew)*: Removes stock AOSP bloatware like recorder, fmradio.
-* **Frost IOS Emoji & Font** *(v2.0 by @Xv2lce)*: System-wide iOS typography.
-* **Iconify** *(v7.2.0 by @DrDisagree)*: UI theming (Plumpy icons, iOS battery, hidden navbar/keyboard space).
-* **Play Integrity Fix** *(v4.4-inject-s by chiteroman)*: API compliance and spoofing.
-* **Systemless Hosts** *(v1.0 by Magisk)*: System-wide ad blocking.
-* **Zygisk - LSPosed** *(v1.10.2)* & **Vector** *(v2.0)*: Frameworks for hooking and module support.
+* **[De-bloater](https://github.com/sunilpaulmathew/De-Bloater)** *(v1.0 by sunilpaulmathew)*: Removes stock AOSP bloatware like recorder, fmradio.
+* **[Frost IOS Emoji & Font](https://xdaforums.com/t/module-magisk-ksu-frost-ios-emojis-sf-font-v2-0.4759469/)** *(v2.0 by @Xv2lce)*: System-wide iOS typography.
+* **[Play Integrity Fix]** *(v4.4-inject-s by chiteroman)*: API compliance and spoofing.
+* **[Systemless Hosts]** *(v1.0 by Magisk)*: System-wide ad blocking.
+* [**Zygisk - LSPosed** *(v1.10.2)* & **Vector**](https://github.com/JingMatrix/Vector) *(v2.0)*: Frameworks for hooking and module support.
 
 ### LSPosed Modules
 * **FakeGapps:** Enables signature spoofing for microG.
-* **Iconify:** Hook for advanced launcher/UI customization.
-* **Pixel Launcher Enhanced:** Homescreen behavior modifications.
+* **[Iconify:](https://github.com/Mahmud0808/Iconify)** Hook for advanced launcher/UI customization.
+* **[Pixel Launcher Enhanced:](https://github.com/Mahmud0808/PixelLauncherEnhanced)** Homescreen behavior modifications.
 * **Wa Enhancer:** WhatsApp feature unlocks and channel bloat removal.
 
 ## 3. Core System & Utilities
