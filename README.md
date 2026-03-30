@@ -7,6 +7,41 @@ A comprehensive deployment guide for a privacy-centric, de-googled, and rooted A
 > * **[RVX]**: Patch using [ReVanced Extended Manager or Download the patched ones listed in releases](https://github.com/thunderkex/revanced-extended/releases)
 
 ---
+---
+
+## 📱 Interface & Privacy logic
+
+A visual overview of the de-googled environment, featuring system-wide theming and privacy-hardened application layouts.
+
+### 🛠️ System Configuration
+<p align="center">
+  <img src="assets/Homescreens.png" width="30% shadow="true" alt="Main Homescreen">
+  <img src="assets/Homescreen2.png" width="30%" alt="Secondary Homescreen">
+  <img src="assets/Appdrawer.png" width="30%" alt="App Drawer">
+</p>
+<p align="center">
+  <em>Customized Trebuchet Launcher with Iconify (Plumpy Icons) and Nothing 2.0 KWGT.</em>
+</p>
+
+### 🛡️ Root & Privacy Hardening
+<p align="center">
+  <img src="assets/MagiskMods.png" width="45%" alt="Magisk Modules">
+  <img src="assets/Hardwareoffintilesforprivacy.png" width="45%" alt="Privacy Tiles">
+</p>
+<p align="center">
+  <em>Left: Active Magisk/LSPosed module stack. Right: Quick-access privacy tiles for hardware sensors.</em>
+</p>
+
+### 🔓 Application De-bloating (RVX/Mods)
+<p align="center">
+  <img src="assets/Youtubewithoutshorts.png" width="24%" alt="YouTube RVX">
+  <img src="assets/Whatsappwithoutchannels.png" width="24%" alt="WhatsApp Mod">
+  <img src="assets/Instawithoutreels.png" width="24%" alt="Instagram Mod">
+  <img src="assets/Letterboxdwithoutads.png" width="24%" alt="Letterboxd Mod">
+</p>
+<p align="center">
+  <em>Distraction-free workflows: Shorts, Reels, Ads, and Channels successfully suppressed via ReVanced and LSPosed.</em>
+</p>
 
 ## Base OS & Framework
 
