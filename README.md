@@ -88,12 +88,11 @@ With the recovery environment established, we move to partition sanitization and
 1.  **On Phone:** Advanced > ADB Sideload.
 2.  **On Windows:** Open PowerShell in your `platform-tools` folder.
 
-```powershell
 # 1. Verify the bridge is active
 .\adb.exe devices
 
 # 2. Push the OS to the device
-.\adb.exe sideload lineage_os_filename.zip
+.\adb.exe sideload lineage_os_filename.z
 
 > **Deployment Legend**
 > * **[AURS]**: Install via [Aurora Store](https://www.apkmirror.com/apk/aurora-oss/aurora-store-fdroid-version/)
