@@ -1,6 +1,3 @@
-# Professional Android Customization & Hardening Guide
-
-
 # 🛠️ Custom OS + Rooting Roadmap (Android/Windows)
 
 > **A professional-grade workflow for transitioning from stock android firmware to a hardened, de-googled LineageOS ecosystem.**
@@ -10,18 +7,6 @@
   <img src="https://img.shields.io/badge/Device-Samsung-0047AB?style=for-the-badge&logo=samsung" alt="Samsung" />
   <img src="https://img.shields.io/badge/OS-LineageOS-167C80?style=for-the-badge&logo=lineageos" alt="LineageOS" />
   <img src="https://img.shields.io/badge/Security-Hardened-brightgreen?style=for-the-badge" alt="Hardened" />
-</div>
-
-## ⚠️ Critical Advisories
-
-<div style="background-color: #fff3cd; border-left: 5px solid #ffecb5; padding: 15px; color: #856404; border-radius: 5px; margin-bottom: 10px;">
-  <strong>[!IMPORTANT] Hardware Requirements</strong><br>
-  This roadmap requires a high-quality data cable (avoid generic charging cables) and a stable power source for your workstation.
-</div>
-
-<div style="background-color: #f8d7da; border-left: 5px solid #f5c6cb; padding: 15px; color: #721c24; border-radius: 5px; margin-bottom: 20px;">
-  <strong>[!CAUTION] Data Volatility</strong><br>
-  Unlocking the bootloader triggers a <strong>Low-Level Format</strong>. All internal storage will be wiped. Verify your off-device backups before proceeding.
 </div>
 
 ---
