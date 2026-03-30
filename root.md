@@ -152,7 +152,7 @@ Once the command window finishes and the phone screen says the installation is c
 When the phone restarts, your device is securely rooted!
 
 ---
-### Phase 6: Post-Install Hardening & Stealth Operations
+## Phase 6: Post-Install Hardening & Stealth Operations
 
 To make your device truly daily-driver ready, you must bypass the "cat-and-mouse" game of Google’s **Play Integrity API** and silence the OS's remaining "phone home" signals.
 
