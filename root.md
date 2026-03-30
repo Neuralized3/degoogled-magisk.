@@ -1,6 +1,30 @@
 # Professional Android Customization & Hardening Guide
 
-This guide provides the standard operating procedure for unlocking, flashing, and rooting a modern Android device. This process transitions a commercially locked phone to a privacy-focused, custom operating system.
+
+# 🛠️ Custom OS + Rooting Roadmap (Android/Windows)
+
+> **A professional-grade workflow for transitioning from stock android firmware to a hardened, de-googled LineageOS ecosystem.**
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows" alt="Windows" />
+  <img src="https://img.shields.io/badge/Device-Samsung-0047AB?style=for-the-badge&logo=samsung" alt="Samsung" />
+  <img src="https://img.shields.io/badge/OS-LineageOS-167C80?style=for-the-badge&logo=lineageos" alt="LineageOS" />
+  <img src="https://img.shields.io/badge/Security-Hardened-brightgreen?style=for-the-badge" alt="Hardened" />
+</div>
+
+## ⚠️ Critical Advisories
+
+<div style="background-color: #fff3cd; border-left: 5px solid #ffecb5; padding: 15px; color: #856404; border-radius: 5px; margin-bottom: 10px;">
+  <strong>[!IMPORTANT] Hardware Requirements</strong><br>
+  This roadmap requires a high-quality data cable (avoid generic charging cables) and a stable power source for your workstation.
+</div>
+
+<div style="background-color: #f8d7da; border-left: 5px solid #f5c6cb; padding: 15px; color: #721c24; border-radius: 5px; margin-bottom: 20px;">
+  <strong>[!CAUTION] Data Volatility</strong><br>
+  Unlocking the bootloader triggers a <strong>Low-Level Format</strong>. All internal storage will be wiped. Verify your off-device backups before proceeding.
+</div>
+
+---
 
 > **Note**: Each phone's process is different. To find the files I suggest XDA and to see the process for your phone, just search on youtube "XYZ mobile custom rom guide" after that "XYZ mobile rooting guide", if you're stuck in bootloop, don't worry they're easy to focus, ask on XDA forums or reddit, you'll be guided. The process down here is a generic process for most devices I recommend watching on youtube and flashing for a better experience.
 
