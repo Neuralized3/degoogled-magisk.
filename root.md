@@ -124,7 +124,7 @@ Modern Android devices group multiple system parts into a single "dynamic partit
 <details>
 <summary><b> Option A</b>: Recovery Flashing Method (Legacy - Click to expand)</summary>
 <br>
-<h4>The following method is the legacy method for patching magisk into the system. Not used anymore.</h4> 
+The following method is the legacy method for patching magisk into the system. Not used anymore.
 The developer of Magisk unified the app and the flashable file. You now use the exact same file for both installing the app and flashing the root files through your custom recovery. 
 
 **1. Prepare the Magisk File:** 
@@ -161,8 +161,9 @@ When the phone restarts, your device is securely rooted!
 <details>
 <summary><b> Option B: </b> Modern Boot Patching Method (Click to expand)</summary>
 <br>
-<h3>Instead of flashing through recovery, this method involves patching the actual kernel of your Operating System. This is the most compatible method for modern devices using **Virtual A/B partitions** and **Android 13+**.
-</h3>
+
+Instead of flashing through recovery, this method involves patching the actual kernel of your Operating System. This is the most compatible method for modern devices using Virtual A/B partitions and Android 13+.
+  
 ### 1. Extract the Boot Image
 Before you begin, you need the "DNA" of your specific ROM:
 * **Locate the File:** Open the Custom ROM `.zip` file on your computer.
