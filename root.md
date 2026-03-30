@@ -121,11 +121,11 @@ Modern Android devices group multiple system parts into a single "dynamic partit
 ---
 
 ## Phase 5: Rooting with Magisk (Using a more modern alternative like KernelSU or APatch is way better but I suggest sticking with magisk as it is more supported.)
-
-## Option A (Recovery Flashing Method)
-
+<details>
+<summary><b>##Option A: Recovery Flashing Method (Legacy - Click to expand)
 The following method is the legacy method for patching magisk into the system. Not used anymore. 
-
+</b></summary>
+<br>
 The developer of Magisk unified the app and the flashable file. You now use the exact same file for both installing the app and flashing the root files through your custom recovery. 
 
 **1. Prepare the Magisk File:** 
@@ -156,6 +156,10 @@ Once the command window finishes and the phone screen says the installation is c
 * Open the app. It will prompt you to download the full version of Magisk to finish the setup. Allow it to install, open it again, and if it asks to perform an "Additional Setup" and reboot, tap **OK**. 
 
 When the phone restarts, your device is securely rooted!
+
+</details>
+
+
 
 ## Option B (Modern Boot Patching Method)
 
