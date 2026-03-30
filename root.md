@@ -122,9 +122,7 @@ Modern Android devices group multiple system parts into a single "dynamic partit
 
 ## Phase 5: Rooting with Magisk (Using a more modern alternative like KernelSU or APatch is way better but I suggest sticking with magisk as it is more supported.)
 <details>
-<summary><b>## Option A: Recovery Flashing Method (Legacy - Click to expand)
-
-</b></summary>
+<summary><b> Option A</b>b>: Recovery Flashing Method (Legacy - Click to expand)</summary>
 <br>
 ### The following method is the legacy method for patching magisk into the system. Not used anymore. 
 The developer of Magisk unified the app and the flashable file. You now use the exact same file for both installing the app and flashing the root files through your custom recovery. 
@@ -161,7 +159,7 @@ When the phone restarts, your device is securely rooted!
 </details>
 
 <details>
-<summary><b>## Option B: Modern Boot Patching Method (Click to expand)</b></summary>
+<summary><b> Option B: </b> Modern Boot Patching Method (Click to expand)</summary>
 <br>
 ### Instead of flashing through recovery, this method involves patching the actual kernel of your Operating System. This is the most compatible method for modern devices using **Virtual A/B partitions** and **Android 13+**.
 
