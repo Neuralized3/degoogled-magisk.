@@ -118,3 +118,8 @@ A visual overview of the de-googled environment, featuring system-wide theming a
 * **Strava [RVX]:** Telemetry and activity tracking.
 * **MyInsta (Independent Modification):** * *Security Note:* Source independently and verify before installation. 
     * *Configuration:* Enable Ghost Mode. To disable Reels: Navigate to Developer Options > MetaConfigs > Search `panavision nav3` > Rewrite `tab1` and `tab3` to `home` > Save and restart. In MyInsta settings, disable feed reels and set reel scroll to one.
+ 
+
+<p align="right">
+  <img src="https://img.shields.io/badge/Refined_with-Gemini-8E75C2?style=flat-square&logo=google-gemini&logoColor=white" height="20">
+</p>
