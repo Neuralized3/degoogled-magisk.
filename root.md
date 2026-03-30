@@ -127,7 +127,7 @@ The developer of Magisk unified the app and the flashable file. You now use the 
 * Right-click the file and rename the file extension from `.apk` to `.zip` (for example, change `Magisk-v27.0.apk` to `Magisk-v27.0.zip`).
 
 **2. Boot into Custom Recovery:** 
-Ensure your phone is connected to your computer. Open your command window and reboot the phone directly into your custom recovery (like TWRP or Lineage Recovery):
+Ensure your phone is connected to your computer. Open your command window and reboot the phone directly into your custom recovery (like TWRP or Lineage Recovery): (if you flash installed the recovery, if you booted temporarily, again boot using adb tools)
 ```bash
 adb reboot recovery
 ```
