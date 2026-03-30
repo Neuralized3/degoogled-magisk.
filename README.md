@@ -37,34 +37,35 @@ A comprehensive guide and list of applications, modules, and modifications for a
 
 ## 4. Customization & UI
 
-* **Widget Engine:** [Kustom Widget (KWGT)](#) *(AOSP version for no premium)*
-* **Widget Packs:** [Nothing 2.0 KWGT (Adaptive)](#), [ThinkPro KWGT](#), & Nothing GitHub widgets repo *(search it you'll find it)*.
+* **Widget Engine:** [Kustom Widget (KWGT)](https://docs.kustom.rocks/docs/downloads/download-kwgt/) *(AOSP version for no premium)*
+* **Widget Packs:** [Nothing 2.0 KWGT (Adaptive)](https://9mod.com/nothing-2-0-for-kwgt.html), [ThinkPro KWGT](https://9mod.com/thinkpro-kwgt.html), & [Nothing GitHub Widgets Repositories](https://github.com/GXX0T/NotWidgets)
 
 ---
 
 ## Extra Applications for Workflow
+#### Note - I'll link most of the applications but those which are to be patched by revanced, I'll tag them as rvx and those which are to be downloaded by aurora store I'll tag them as aurs, I'll also tag the revanced patched applications link.
 
 ### Productivity & Development
-* **Obsidian:** Note-taking and vault management.
-* **Autosync for Google Drive:** Automated cloud syncing for Obsidian.
-* **Google Drive:** For PDFs.
-* **Google Maps:** For navigation or use OpenMaps for better privacy. *(Note: you can enable and disable location in Lineage or Android 15 in general).*
-* **GitHub:** Repository workflow management.
-* **NotebookLM:** AI-driven research and fast studying.
-* **Gemini & Google App:** Primary AI assistant dependencies. *(Google is needed for Gemini setup).*
+* **Obsidian:**(aurs) Note-taking and vault management.
+* **Autosync for Google Drive:**(aurs) Automated cloud syncing for Obsidian.
+* **Google Drive:**(aurs) For PDFs.
+* **Google Maps:**(aurs) For navigation or use OpenMaps for better privacy. *(Note: you can enable and disable location in Lineage or Android 15 in general).*
+* **GitHub:**(aurs) Repository workflow management.
+* **NotebookLM:**(aurs) AI-driven research and fast studying.
+* **Gemini & Google App:**(aurs) Primary AI assistant dependencies. *(Google is needed for Gemini setup).*
 
 ### Media & Photography
-* **Camera:** [LMC](#) *(GCam port, no Google services needed, most natural colors).*
-* **Gallery/Backup:** [Google Photos](#) *(Modded for unlimited backup using Magisk or ReVanced).*
-* **Photo Editor:** [Lightroom for Samsung](#).
-* **Video:** [YouTube](#) *(ReVanced Extended - Ad-free, Shorts hidden).*
-* **Music:** [YouTube Music](#) *(ReVanced Extended - Ad-free Spotify alternative).*
+* **Camera:** [LMC](https://www.celsoazevedo.com/files/android/google-camera/) *(GCam port, no Google services needed, most natural colors).*
+* **Gallery/Backup:** [Google Photos](https://github.com/thunderkex/revanced-extended/releases) *(Modded for unlimited backup using Magisk or ReVanced).*
+* **Photo Editor:** [Lightroom for Samsung](https://github.com/thunderkex/revanced-extended/releases).
+* **Video:** [YouTube](https://github.com/thunderkex/revanced-extended/releases) *(ReVanced Extended - Ad-free, Shorts hidden).*
+* **Music:** [YouTube Music](https://github.com/thunderkex/revanced-extended/releases) *(ReVanced Extended - Ad-free Spotify alternative).*
 
 ### Social & Networking
-* **WhatsApp:** Primary communication *(Modded via Wa Enhancer).*
-* **Telegram:** Mod repositories, support channels, and communication.
-* **MyInsta:** Instagram mod *(Ghost mode enabled; Reels disabled via Panavision nav3 settings: go into metaconfigs in developer options, search `panavision nav3`, in its config rewrite `tab1` and `tab3` to `home`, save the config in metaconfig and restart).*
-* **LinkedIn:** Professional networking and resume management.
-* **Pinterest:** Visual inspiration.
-* **Letterboxd:** Movie reviews and logging.
-* **Strava:** Walking and activity tracker.
+* **WhatsApp:**(aur) Primary communication *(Modded via Wa Enhancer).*
+* **Telegram:**(aur) Mod repositories, support channels, and communication.
+* **MyInsta:**(Find your own link, I cannot figure out whether it is safe from the source I downloaded) Instagram mod *(Ghost mode enabled; Reels disabled via Panavision nav3 settings: go into metaconfigs in developer options, search `panavision nav3`, in its config rewrite `tab1` and `tab3` to `home`, save the config in metaconfig and restart, also in myInsta settings disable reel scroll to one and feed reels.).*
+* **LinkedIn:**(aurs) Professional networking and resume management.
+* **Pinterest:**(aurs) Visual inspiration.
+* [**Letterboxd:**(Patch yourself using revanced extended manager)](https://github.com/thunderkex/revanced-extended/releases) Movie reviews and logging.
+* [**Strava:**](https://github.com/thunderkex/revanced-extended/releases) Walking and activity tracker.
