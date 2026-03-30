@@ -21,10 +21,10 @@ You need the official tools from Google to send commands to your phone. Do not u
 2. **Extract the Folder:** Unzip the downloaded file to a safe place (like `C:\platform-tools`).
 3. **Open Terminal/Command Prompt:** Navigate into that extracted folder, type `cmd` into the address bar (on Windows), and hit Enter. This opens a command window right where your tools are.
 4. **Prepare Your Files:** You will need specific files from your custom ROM's developer. Download the ROM package (`.zip`). From inside that package, or from the developer's site, gather these image files and place them in your `platform-tools` folder:
-   * `boot.img` (or `init_boot.img` for Android 13+ devices)
-   * `vendor_boot.img` or `recovery.img`
+   * `ROM.zip` 
+   * `recovery.img`
    * `vbmeta.img`
-
+If you cannot find them in the Custom ROM's developer's files, search your phone's model in XDA Forums, and go into the development tab, you'll definitely find roms, and the following packages. Download vbmeta patched and also Download the recovery image from either TWRP or Orangefox. I recommend TWRP.
 ---
 
 ## Phase 2: Unlocking the Bootloader
@@ -68,16 +68,12 @@ Android Verified Boot (AVB) checks if your operating system is official. We must
    ```bash
    fastboot flash vbmeta vbmeta.img --disable-verity --disable-verification
    ```
-3. Flash your custom recovery environment (like TWRP or Lineage Recovery). 
-   * *For newer devices (Android 12+), recovery is usually inside the vendor_boot partition:*
-     ```bash
-     fastboot flash vendor_boot vendor_boot.img
-     ```
-   * *For slightly older devices with a dedicated recovery partition:*
+3. Flash your custom recovery environment (like TWRP or Lineage Recovery).
+    *(For devices with a dedicated recovery partition):*
      ```bash
      fastboot flash recovery recovery.img
      ```
-4. **CRITICAL STEP:** Do not let the phone boot up normally yet! Use the volume buttons to select **"Recovery Mode"** on the bootloader screen and press the Power button. If the phone boots normally, it will delete your custom recovery, and you will have to repeat this phase.
+5. **CRITICAL STEP:** Do not let the phone boot up normally yet! Use the volume buttons to select **"Recovery Mode"** on the bootloader screen and press the Power button. If the phone boots normally, it will delete your custom recovery, and you will have to repeat this phase.
 
 ---
 
