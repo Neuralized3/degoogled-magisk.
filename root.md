@@ -2,7 +2,10 @@
 
 This guide provides the standard operating procedure for unlocking, flashing, and rooting a modern Android device. This process transitions a commercially locked phone to a privacy-focused, custom operating system.
 
+> **Note**: Each phone's process is different. To find the files I suggest XDA and to see the process for your phone, just search on youtube "XYZ mobile custom rom guide" after that "XYZ mobile rooting guide", if you're stuck in bootloop, don't worry they're easy to focus, ask on XDA forums or reddit, you'll be guided. The process down here is a generic process for most devices I recommend watching on youtube and flashing for a better experience.
+
 > ⚠️ **Important Device Notice:** This guide applies to standard Android devices that use standard Fastboot protocols (e.g., Google Pixel, OnePlus, Motorola, Nothing). *Samsung devices use a proprietary tool called Odin and require a entirely different process.*
+
 
 ## 🛑 Pre-Flight Checks & Warnings
 
@@ -82,7 +85,7 @@ Android Verified Boot (AVB) checks if your operating system is official. We must
 Modern Android devices group multiple system parts into a single "dynamic partition." You will use ADB Sideloading, which safely streams the installation file from your PC directly to the phone's memory.
 
 1. **Format Data:** On your phone's custom recovery screen, tap **Factory Reset** > **Format Data / Factory Reset**. This removes the factory encryption so your new OS can start fresh.
-2. **Enable Sideloading:** Go back to the main recovery menu. Select **Apply Update** > **Apply from ADB**.
+2. **Enable Sideloading:** Go back to the main recovery menu. Select ADB Sideload in advanced settings.
 3. **Install the OS:** In your computer's command window, type the following command, replacing the file name with the actual name of your ROM file:
    ```bash
    adb sideload your_custom_rom.zip
@@ -96,30 +99,45 @@ Modern Android devices group multiple system parts into a single "dynamic partit
 
 The safest way to get Root access on modern devices is to let the Magisk app patch your phone's kernel directly.
 
-1. **Transfer the Kernel File:** Copy the `boot.img` (or `init_boot.img` for Android 13+) file you saved earlier onto your phone's internal storage.
-2. **Patch the File:** 
-   * Download and install the[Magisk APK](https://github.com/topjohnwu/Magisk) on your phone.
-   * Open Magisk, tap **Install** (next to Magisk).
-   * Choose **Select and Patch a File**.
-   * Find and select the `boot.img` or `init_boot.img` file. Magisk will create a new file named `magisk_patched.img` in your Downloads folder.
-3. **Transfer Back to PC:** Copy the newly created `magisk_patched.img` from your phone back to your computer's `platform-tools` folder.
-4. **Flash the Rooted Kernel:** Reboot the phone back to the bootloader:
-   ```bash
-   adb reboot bootloader
-   ```
-5. Flash the patched image to the correct partition.
-   * *If you patched a boot image:*
-     ```bash
-     fastboot flash boot magisk_patched.img
-     ```
-   * *If you patched an init_boot image (Android 13+):*
-     ```bash
-     fastboot flash init_boot magisk_patched.img
-     ```
-6. Type `fastboot reboot`. Your device is now securely rooted.
 
----
 
+
+Here is the rewritten section using the custom recovery flashing method (renaming the APK to a ZIP). 
+
+***
+
+## Phase 5: Rooting with Magisk (Recovery Flashing Method)
+
+The developer of Magisk unified the app and the flashable file. You now use the exact same file for both installing the app and flashing the root files through your custom recovery.
+
+**1. Prepare the Magisk File:** 
+* Download the official [Magisk APK](https://github.com/topjohnwu/Magisk/releases) to your computer.
+* Right-click the file and rename the file extension from `.apk` to `.zip` (for example, change `Magisk-v27.0.apk` to `Magisk-v27.0.zip`).
+
+**2. Boot into Custom Recovery:** 
+Ensure your phone is connected to your computer. Open your command window and reboot the phone directly into your custom recovery (like TWRP or Lineage Recovery):
+```bash
+adb reboot recovery
+```
+
+**3. Flash the Magisk ZIP:**
+You can install this file using the same ADB Sideload method you used for the custom ROM.
+* **On your phone:** In the recovery menu, navigate to **Apply Update** > **Apply from ADB** (or select "Advanced" > "ADB Sideload" in TWRP).
+* **On your computer:** Type the following command to send and install the Magisk zip:
+  ```bash
+  adb sideload Magisk-v27.0.zip
+  ```
+*(Note: If you prefer not to use a PC, you can copy the `.zip` file directly to your phone's internal storage, tap **Install** in your custom recovery, select the file, and swipe to flash).*
+
+**4. Reboot to System:** 
+Once the command window finishes and the phone screen says the installation is complete, select **Reboot System** from the recovery menu. 
+
+**5. Finalize the Setup:**
+* When your phone boots up, look for the **Magisk** app in your app drawer. 
+* *Note: It might look like a generic Android icon (a "stub" app). This is normal.*
+* Open the app. It will prompt you to download the full version of Magisk to finish the setup. Allow it to install, open it again, and if it asks to perform an "Additional Setup" and reboot, tap **OK**. 
+
+When the phone restarts, your device is securely rooted!
 ## Phase 6: Post-Install Hardening
 
 To make your device secure and fully functional for daily use, perform these final steps.
@@ -129,6 +147,7 @@ Because your bootloader is unlocked, banking apps and Google Pay will fail secur
 * Open Magisk, go to Settings, and enable **Zygisk**. 
 * Download the [Play Integrity Fix module](https://github.com/chiteroman/PlayIntegrityFix) on your phone.
 * In Magisk, go to the **Modules** tab, tap **Install from storage**, and flash the downloaded module. Reboot the phone. This tricks apps into thinking the bootloader is locked.
+I suggest installing a safeboot module.
 
 ### 2. Block Ads and Trackers System-Wide
 * Go to Android **Settings > Network & Internet > Private DNS**.
