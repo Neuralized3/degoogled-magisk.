@@ -15,25 +15,25 @@ A comprehensive guide and list of applications, modules, and modifications for a
 ### Magisk Modules
 * **[De-bloater](https://github.com/sunilpaulmathew/De-Bloater)** *(v1.0 by sunilpaulmathew)*: Removes stock AOSP bloatware like recorder, fmradio.
 * **[Frost IOS Emoji & Font](https://xdaforums.com/t/module-magisk-ksu-frost-ios-emojis-sf-font-v2-0.4759469/)** *(v2.0 by @Xv2lce)*: System-wide iOS typography.
-* **[Play Integrity Fix]** *(v4.4-inject-s by chiteroman)*: API compliance and spoofing.
+* **[Play Integrity Fix]**(https://github.com/KOWX712/PlayIntegrityFix/) *(v4.4-inject-s by chiteroman)*: API compliance and spoofing.
 * **[Systemless Hosts]** *(v1.0 by Magisk)*: System-wide ad blocking.
 * [**Zygisk - LSPosed** *(v1.10.2)* & **Vector**](https://github.com/JingMatrix/Vector) *(v2.0)*: Frameworks for hooking and module support.
 
 ### LSPosed Modules
-* **FakeGapps:** Enables signature spoofing for microG.
+* [**FakeGapps:**](https://github.com/whew-inc/FakeGApps/releases) Enables signature spoofing for microG.
 * **[Iconify:](https://github.com/Mahmud0808/Iconify)** Hook for advanced launcher/UI customization.
 * **[Pixel Launcher Enhanced:](https://github.com/Mahmud0808/PixelLauncherEnhanced)** Homescreen behavior modifications.
-* **Wa Enhancer:** WhatsApp feature unlocks and channel bloat removal.
+* [**Wa Enhancer:**](https://github.com/Dev4Mod/WaEnhancer) WhatsApp feature unlocks and channel bloat removal.
 
 ## 3. Core System & Utilities
 
-* **Browser:** [Brave](#) or any hardened Chromium/Firefox-based browser. *(Primary)*
-* **File Manager:** [ZArchiver](#) *(Replaces debloated AOSP Files)*
-* **Keyboard:** [Gboard](#)
-* **Launcher:** [Trebuchet](#) *(LineageOS Default)*
+* **Browser:** Brave(aurs) or any hardened Chromium/Firefox-based browser. *(Primary)*
+* **File Manager:** ZArchiver(aurs) *(Replaces debloated AOSP Files)*
+* **Keyboard:** Gboard(aurs)
+* **Launcher:** Trebuchet *(LineageOS Default)*
 * **Stock Google Apps:** Calculator, Clock, Maps, Phone, Contacts, Messages, Settings, SIM Toolkit
-* **Security/Email:** [Proton Mail](#) *(Primary E2E)* / [Gmail](#) *(For custom domains)*
-* **Digital Wellbeing:** [StayFree](#)
+* **Security/Email:** Proton Mail *(Primary E2E)* / Gmail *(For custom domains)* (download both of them from aurs)
+* **Digital Wellbeing:** StayFree(aurs)
 
 ## 4. Customization & UI
 
