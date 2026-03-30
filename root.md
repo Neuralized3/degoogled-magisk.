@@ -205,8 +205,9 @@ This is the moment the root is applied to the system hardware.
       ```
 
 ### 5. Finalize the Setup
-* **Reboot:** ```
-  fastboot reboot```
+* **Reboot:**
+ ```bash
+  fastboot reboot
   ```
 * **Verify:** Open the Magisk app. If prompted to perform **"Additional Setup,"** tap **OK** and let the phone reboot one last time.
 
