@@ -13,7 +13,7 @@
 
 > **Note**: Each phone's process is different. To find the files I suggest XDA and to see the process for your phone, just search on youtube "XYZ mobile custom rom guide" after that "XYZ mobile rooting guide", if you're stuck in bootloop, don't worry they're easy to focus, ask on XDA forums or reddit, you'll be guided. The process down here is a generic process for most devices I recommend watching on youtube and flashing for a better experience.
 
-> ⚠️ **Important Device Notice:** This guide applies to standard Android devices that use standard Fastboot protocols (e.g., Google Pixel, OnePlus, Motorola, Nothing). *Samsung devices use a proprietary tool called Odin and require a entirely different process.*
+> ⚠️ **Important Device Notice:** This guide applies to standard Android devices that use standard Fastboot protocols (e.g., Google Pixel, OnePlus, Motorola, Nothing). *(Samsung devices use a proprietary tool called Odin which is used to flash the vbmeta + recovery used in phase 3 so you can follow till phase 2 in samsung and from phase 4 again, you'll need to skip phase 3, again I suggest watching a tutorial as it requires a entirely different process.*)
 
 
 ## 🛑 Pre-Flight Checks & Warnings
