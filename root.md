@@ -108,18 +108,7 @@ Modern Android devices group multiple system parts into a single "dynamic partit
 
 ---
 
-## Phase 5: Rooting with Magisk (Systemless Root)
-
-The safest way to get Root access on modern devices is to let the Magisk app patch your phone's kernel directly.
-
-
-
-
-Here is the rewritten section using the custom recovery flashing method (renaming the APK to a ZIP). 
-
-***
-
-## Phase 5: Rooting with Magisk (Recovery Flashing Method)
+## Phase 5: Rooting with Magisk (Recovery Flashing Method) (Using a more modern alternative like KernelSU or APatch is way better but I suggest sticking with magisk.)
 
 The developer of Magisk unified the app and the flashable file. You now use the exact same file for both installing the app and flashing the root files through your custom recovery.
 
@@ -151,22 +140,30 @@ Once the command window finishes and the phone screen says the installation is c
 * Open the app. It will prompt you to download the full version of Magisk to finish the setup. Allow it to install, open it again, and if it asks to perform an "Additional Setup" and reboot, tap **OK**. 
 
 When the phone restarts, your device is securely rooted!
-## Phase 6: Post-Install Hardening
 
-To make your device secure and fully functional for daily use, perform these final steps.
+### Phase 6: Post-Install Hardening & Stealth Operations
 
-### 1. Fix Banking Apps & Google Wallet
-Because your bootloader is unlocked, banking apps and Google Pay will fail security checks (Play Integrity). 
-* Open Magisk, go to Settings, and enable **Zygisk**. 
-* Download the [Play Integrity Fix module](https://github.com/chiteroman/PlayIntegrityFix) on your phone.
-* In Magisk, go to the **Modules** tab, tap **Install from storage**, and flash the downloaded module. Reboot the phone. This tricks apps into thinking the bootloader is locked.
-I suggest installing a safeboot module.
+To make your device truly daily-driver ready, you must bypass the "cat-and-mouse" game of Google’s **Play Integrity API** and silence the OS's remaining "phone home" signals.
 
-### 2. Block Ads and Trackers System-Wide
-* Go to Android **Settings > Network & Internet > Private DNS**.
-* Select **Private DNS provider hostname**.
-* Enter `dns.adguard-dns.com` (for basic ad-blocking) or your personal NextDNS URL. This routes all traffic through an encrypted tunnel, stripping out telemetry and advertisements before they load.
+#### 1. Bypassing Play Integrity (Banking & Wallet)
+In 2026, simply flashing a module is the first step, not the last. High-security apps now look for "Zygisk" itself and "Developer Options."
 
-### 3. Close Physical Attack Vectors
-* Go back to **Developer Options** and turn off **USB Debugging**. 
-* *Why?* Leaving this on is a massive security risk. If a bad actor physically steals your phone and plugs it into a PC while debugging is on, they can bypass lock screens and extract your data. Keep it disabled unless you actively need it.
+* **The Stealth Stack:**
+    * **Magisk Settings:** Enable **Zygisk**, then use the **"Hide the Magisk App"** option. This renames the app to a random string (e.g., "Settings") to prevent apps from scanning your installed list for "Magisk."
+    * **The Core Module:** Install the latest [Play Integrity Fix by chiteroman](https://github.com/chiteroman/PlayIntegrityFix). This handles the "Basic" and "Device" integrity levels.
+    * **The "Strong" Bypass:** Since you are on a Custom ROM with an unlocked bootloader, you likely cannot pass "Strong Integrity." 
+        * *Action:* Use **Zygisk Assistant** or **Shamiko**. Unlike the standard "Enforce DenyList," Shamiko completely hides the modified environment from chosen apps without disabling Zygisk's benefits.
+    * **Configure the DenyList:** In Magisk Settings, go to **Configure DenyList**, tap the three-dot menu to **"Show system apps,"** and check every sub-process for your Banking Apps, Google Wallet, and the Google Play Store. **Crucial:** Ensure "Enforce DenyList" is **OFF** if you are using Shamiko (Shamiko handles the hiding better).
+
+#### 2. Network-Level Privacy (DNS & Encrypted Tunnels)
+Standard DNS is unencrypted, meaning your ISP (or Google) can see every domain you visit.
+
+* **System-Wide Ad-Blocking:** Navigate to **Settings > Network & Internet > Private DNS**.
+    * **Option A (Set & Forget):** Enter `dns.adguard-dns.com`. This kills 90% of in-app ads and trackers.
+    * **Option B (The Pro Choice):** Use **NextDNS**. Create a free account to get a custom "Private DNS" URL. This allows you to see real-time logs of what your phone is trying to "leak" and block specific telemetry from Samsung, Xiaomi, or Google individually.
+* **Preventing DNS Leaks:** For maximum hardening, ensure your **VPN** (if using one like Mullvad or Proton) is set to "Always-on" and "Block connections without VPN" in Android settings.
+
+#### 3. Closing Physical & Logic Gaps
+* **Disable USB Debugging:** Now that your setup is complete, turn this **OFF**. A phone with an unlocked bootloader and active USB debugging is a "skeleton key" for anyone who physically touches your device.
+* **The "Bootloader Warning" Note:** On a De-Googled phone, you will see a "Your bootloader is unlocked" warning every time you restart. **Do not attempt to re-lock the bootloader** on a Custom ROM unless you have verified your device supports "User-settable Root of Trust" (e.g., Google Pixel), or you will permanently brick the phone.
+
