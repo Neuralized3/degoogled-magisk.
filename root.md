@@ -1,6 +1,6 @@
 # 🛠️ Custom OS + Rooting Roadmap (Android/Windows)
 
-> **A professional-grade workflow for transitioning from stock android firmware to a hardened, de-googled LineageOS ecosystem.**
+> **A professional-grade workflow for transitioning from stock android firmware to a hardened, de-googled (optional) LineageOS ecosystem.**
 
 <div align="center">
   <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows" alt="Windows" />
@@ -36,6 +36,7 @@ You need the official tools from Google to send commands to your phone. Do not u
    * `ROM.zip` 
    * `recovery.img`
    * `vbmeta.img`
+   * `MindtheGapps.zip`
 
 
 
@@ -114,13 +115,18 @@ Modern Android devices group multiple system parts into a single "dynamic partit
    adb sideload your_custom_rom.zip
    ```
    *Note: The command terminal will likely pause at 47%. This is completely normal and means the PC has finished sending the file, and the phone is currently installing it. Wait for the phone screen to say "Step 2/2 completed."*
-4. Reboot your phone. Welcome to your new Custom OS!
+4. After that if you want install MindtheGapps.zip the same way for native google support (don't use this, use microg for privacy, highly unrecommended MindtheGapps, avoid native google).
+5. Reboot your phone. Welcome to your new Custom OS!
 
 ---
 
-## Phase 5: Rooting with Magisk (Recovery Flashing Method) (Using a more modern alternative like KernelSU or APatch is way better but I suggest sticking with magisk.)
+## Phase 5: Rooting with Magisk (Using a more modern alternative like KernelSU or APatch is way better but I suggest sticking with magisk as it is more supported.)
 
-The developer of Magisk unified the app and the flashable file. You now use the exact same file for both installing the app and flashing the root files through your custom recovery.
+## Option A (Recovery Flashing Method)
+
+The following method is the legacy method for patching magisk into the system. Not used anymore. 
+
+The developer of Magisk unified the app and the flashable file. You now use the exact same file for both installing the app and flashing the root files through your custom recovery. 
 
 **1. Prepare the Magisk File:** 
 * Download the official [Magisk APK](https://github.com/topjohnwu/Magisk/releases) to your computer.
@@ -150,6 +156,58 @@ Once the command window finishes and the phone screen says the installation is c
 * Open the app. It will prompt you to download the full version of Magisk to finish the setup. Allow it to install, open it again, and if it asks to perform an "Additional Setup" and reboot, tap **OK**. 
 
 When the phone restarts, your device is securely rooted!
+
+## Option B (Modern Boot Patching Method)
+
+Instead of flashing through recovery, this method involves patching the actual kernel of your Operating System. This is the most compatible method for modern devices using **Virtual A/B partitions** and **Android 13+**.
+
+### 1. Extract the Boot Image
+Before you begin, you need the "DNA" of your specific ROM:
+* **Locate the File:** Open the Custom ROM `.zip` file on your computer.
+* **Identify your target:** * Look for `boot.img`. Extract this to your desktop.
+    * **Modern Device Note:** If your phone shipped with **Android 13 or newer**, look for `init_boot.img` instead.
+* **Payload Note:** If you only see a `payload.bin` file, you may need a "Payload Dumper" tool to extract the images, or check your ROM developer’s download page for a "Pre-extracted" boot image.
+
+### 2. Transfer and Patch
+Now, you will use the Magisk engine to inject root code into that image.
+* **Move to Mobile:** Connect your phone to the PC and copy the `boot.img` (or `init_boot.img`) to your phone’s **Downloads** folder.
+* **Install Magisk:** Download and install the [Official Magisk APK](https://github.com/topjohnwu/Magisk/releases).
+* **Patching Process:**
+    1. Open the Magisk app. 
+    2. Tap **Install** in the top card.
+    3. Select **"Select and Patch a File"**.
+    4. Navigate to your Downloads folder and select your `.img` file.
+    5. Tap **"Let's Go"**. 
+* **The Result:** Magisk will generate a new file named `magisk_patched-[random_strings].img` in your Downloads folder.
+
+### 3. Return the Patched File to PC
+* Connect your phone back to the computer.
+* Move the `magisk_patched-[random_strings].img` from your phone's storage into your computer's `platform-tools` folder. 
+* *Tip: Rename it to `patched_boot.img` to make the following commands easier to type.*
+
+### 4. Flash the Patched Image
+This is the moment the root is applied to the system hardware.
+* **Enter Fastboot:** Open your terminal in the `platform-tools` folder and type:
+  ```bash
+  adb reboot bootloader
+  ```
+* **Execute the Flash:**
+    * **For Standard Boot:**
+      ```bash
+      fastboot flash boot patched_boot.img
+      ```
+    * **For Android 13+ (init_boot):**
+      ```bash
+      fastboot flash init_boot patched_boot.img
+      ```
+
+### 5. Finalize the Setup
+* **Reboot:** ```bash
+  fastboot reboot
+  ```
+* **Verify:** Open the Magisk app. If prompted to perform **"Additional Setup,"** tap **OK** and let the phone reboot one last time.
+
+> **Success:** Your device now has a systemless root. You are ready to move to **Phase 6** to hide these modifications from sensitive apps.
 
 ---
 ## Phase 6: Post-Install Hardening & Stealth Operations
