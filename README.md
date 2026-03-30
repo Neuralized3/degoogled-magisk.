@@ -2,6 +2,99 @@
 
 A comprehensive deployment guide for a privacy-centric, de-googled, and rooted Android environment. This setup balances the removal of native telemetry with the retention of modern functionality through open-source frameworks and system-level modifications.
 
+# 🛠️ System Deployment & Hardening Roadmap (Samsung/Windows)
+
+> **A professional-grade workflow for transitioning from stock Samsung firmware to a hardened, de-googled LineageOS ecosystem.**
+
+---
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows" alt="Windows" />
+  <img src="https://img.shields.io/badge/Device-Samsung-0047AB?style=for-the-badge&logo=samsung" alt="Samsung" />
+  <img src="https://img.shields.io/badge/OS-LineageOS-167C80?style=for-the-badge&logo=lineageos" alt="LineageOS" />
+  <img src="https://img.shields.io/badge/Security-Hardened-brightgreen?style=for-the-badge" alt="Hardened" />
+</div>
+
+---
+
+## ⚠️ Critical Advisories
+
+<div style="background-color: #fff3cd; border-left: 5px solid #ffecb5; padding: 15px; color: #856404; border-radius: 5px; margin-bottom: 10px;">
+  <strong>[!IMPORTANT] Hardware Requirements</strong><br>
+  This roadmap requires a high-quality data cable (avoid generic charging cables) and a stable power source for your workstation.
+</div>
+
+<div style="background-color: #f8d7da; border-left: 5px solid #f5c6cb; padding: 15px; color: #721c24; border-radius: 5px; margin-bottom: 20px;">
+  <strong>[!CAUTION] Data Volatility</strong><br>
+  Unlocking the bootloader triggers a <strong>Low-Level Format</strong>. All internal storage will be wiped. Verify your off-device backups before proceeding.
+</div>
+
+---
+
+## 📂 Phase 1: Environment Preparation
+On Windows, driver-level communication is the most frequent point of failure. Establish a stable bridge between your PC and the device silicon.
+
+### 1. Dependencies & Drivers
+* **Samsung USB Drivers:** Install the [Official Samsung Android USB Drivers](https://developer.samsung.com/android-usb-driver).
+* **ADB/Fastboot CLI:** Download [Google SDK Platform-Tools](https://developer.android.com/studio/releases/platform-tools). 
+    * *Tip:* Extract to `C:\platform-tools` and add this path to your **System Environment Variables**.
+
+### 2. The Binary Manifest
+Ensure you have the device-specific versions of the following files:
+* `twrp_recovery.tar` (Custom recovery)
+* `vbmeta.img.tar` (Required to bypass Samsung’s Android Verified Boot)
+* `LineageOS_21.zip` (The core OS package)
+
+---
+
+## 🔓 Phase 2: Bootloader Initialization
+The "Silicon Handshake" requires manual intervention to disable Samsung's factory security locks.
+
+1.  **Unlock Developer Environment:** Navigate to *Settings > About Phone* and tap **Build Number** 7 times.
+2.  **Enable Provisioning:** In *Settings > Developer Options*, toggle **USB Debugging** and **OEM Unlocking**.
+    * *Note:* If OEM Unlock is missing, connect to Wi-Fi; Samsung often hides this toggle until the device "checks in."
+3.  **Physical Unlock Sequence:**
+    * Power off the device.
+    * Hold **Vol Up + Vol Down** while plugging the device into your PC to enter **Download Mode**.
+    * Long-press **Vol Up** when prompted to initiate the unlock.
+    * The device will wipe and reboot. **You must re-enable USB Debugging after this reset.**
+
+---
+
+## 💉 Phase 3: Recovery & VBMeta Injection
+Samsung devices utilize **Android Verified Boot (AVB)**. To boot a custom recovery, we must flash a "null" VBMeta to disable integrity checks.
+
+### Odin Flash Configuration
+
+| Partition | File Requirement | Odin Slot |
+| :--- | :--- | :--- |
+| **Recovery** | `twrp_filename.tar` | **AP** |
+| **VBMeta** | `vbmeta.img.tar` | **USERDATA** (or CP) |
+
+1.  **Odin Setup:** Run `Odin3` as Administrator. Under the **Options** tab, **UNCHECK "Auto Reboot"**.
+2.  **The Flash:** Load the files into their respective slots and click **Start**.
+3.  **The Manual Handover:** Once Odin shows `PASS`, force-reboot (**Power + Vol Down**). The moment the screen goes black, immediately switch to **Power + Vol Up** to intercept the boot and enter TWRP Recovery.
+
+---
+
+## 💿 Phase 4: Firmware Deployment
+With the recovery environment established, we move to partition sanitization and OS installation.
+
+### Partition Sanitization (In TWRP)
+1.  **Wipe > Format Data** > Type `yes`.
+2.  **Wipe > Advanced Wipe** > Select `System` and `Cache`.
+
+### The Sideload Protocol
+1.  **On Phone:** Advanced > ADB Sideload.
+2.  **On Windows:** Open PowerShell in your `platform-tools` folder.
+
+```powershell
+# 1. Verify the bridge is active
+.\adb.exe devices
+
+# 2. Push the OS to the device
+.\adb.exe sideload lineage_os_filename.zip
+
 > **Deployment Legend**
 > * **[AURS]**: Install via [Aurora Store](https://www.apkmirror.com/apk/aurora-oss/aurora-store-fdroid-version/)
 > * **[RVX]**: Patch using [ReVanced Extended Manager or Download the patched ones listed in releases](https://github.com/thunderkex/revanced-extended/releases)
