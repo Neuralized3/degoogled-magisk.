@@ -7,7 +7,6 @@ A comprehensive deployment guide for a privacy-centric, de-googled, and rooted A
 > * **[RVX]**: Patch using [ReVanced Extended Manager or Download the patched ones listed in releases](https://github.com/thunderkex/revanced-extended/releases)
 
 ---
----
 
 ## 📱 Interface & Privacy logic
 
@@ -55,16 +54,12 @@ A visual overview of the de-googled environment, featuring system-wide theming a
 
 > **A professional-grade workflow for transitioning from stock android firmware to a hardened, de-googled LineageOS ecosystem.**
 
----
-
 <div align="center">
   <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge&logo=windows" alt="Windows" />
   <img src="https://img.shields.io/badge/Device-Samsung-0047AB?style=for-the-badge&logo=samsung" alt="Samsung" />
   <img src="https://img.shields.io/badge/OS-LineageOS-167C80?style=for-the-badge&logo=lineageos" alt="LineageOS" />
   <img src="https://img.shields.io/badge/Security-Hardened-brightgreen?style=for-the-badge" alt="Hardened" />
 </div>
-
----
 
 ## ⚠️ Critical Advisories
 
