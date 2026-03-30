@@ -36,8 +36,8 @@ You need the official tools from Google to send commands to your phone. Do not u
    * `ROM.zip` 
    * `recovery.img`
    * `vbmeta.img`
-   *
 If you cannot find them in the Custom ROM's developer's files, search your phone's model in XDA Forums, and go into the development tab, you'll definitely find roms, and the following packages. Download vbmeta patched and also Download the recovery image from either TWRP or Orangefox. I recommend TWRP.
+
 ---
 
 ## Phase 2: Unlocking the Bootloader
