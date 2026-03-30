@@ -14,9 +14,9 @@ A visual overview of the de-googled environment, featuring system-wide theming a
 
 ### 🛠️ System Configuration
 <p align="center">
-  <img src="assets/Homescreens.png" width="30% shadow="true" alt="Main Homescreen">
-  <img src="assets/Homescreen2.png" width="30%" alt="Secondary Homescreen">
-  <img src="assets/Appdrawer.png" width="30%" alt="App Drawer">
+  <img src="assets/Homescreens.png" width="30%" alt="Main Homescreen">
+  <img src="assets/Homescreen2.png" width="30%"" alt="Secondary Homescreen">
+  <img src="assets/Appdrawer.png" width="30%"" alt="App Drawer">
 </p>
 <p align="center">
   <em>Customized Trebuchet Launcher with Iconify (Plumpy Icons) and Nothing 2.0 KWGT.</em>
